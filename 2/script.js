@@ -4,15 +4,26 @@
 
     function addSqares() {
         let input = document.createElement ("input");
-        input.id = "in-put"
+        input.id = "in-put";
         const removeEl = document.createElement ("button");
         const elDiv = document.createElement ("div");
-        elDiv.appendChild(input);
         elDiv.appendChild(removeEl);
+        elDiv.appendChild(input);
         document.getElementById("sqares-container").appendChild(elDiv);
-        document.getElementById("in-put").style.backgroundColor = "red"
+        input.style.width = "30px";
+        removeEl.style.width = "30px";
+        removeEl.style.height = "20px";
+        removeEl.style.marginLeft = "45%";
+        removeEl.innerHTML = "-";
+        elDiv.style.width = "30px";
+       
+
+        removeEl.addEventListener("click", removeSqare);
+
+        function removeSqare() {
+            elDiv.remove();
+        }
+
     }
-
-
 
 })();
