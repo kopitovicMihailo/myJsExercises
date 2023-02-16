@@ -1,6 +1,7 @@
 (function () {
 
     document.getElementById("addSqare").addEventListener("click", addSqares);
+    document.getElementById("addNumber").addEventListener("click", addNumSqares);
 
     function addSqares() {
         let input = document.createElement ("input");
@@ -17,7 +18,6 @@
         removeEl.innerHTML = "-";
         elDiv.style.width = "30px";
        
-
         removeEl.addEventListener("click", removeSqare);
 
         function removeSqare() {
@@ -26,4 +26,12 @@
 
     }
 
+    function addNumSqares(){
+        let numberOfSqares = document.getElementById("numOfSqares").value;
+        let i = 0;
+        while (i<numberOfSqares){
+            addSqares();
+            i+=1;
+        }
+    }
 })();
